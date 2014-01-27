@@ -1,0 +1,4 @@
+## YAML Template.
+---
+parameters:
+    acme_blog.emails.contact_email: "%gmail.contact%"
