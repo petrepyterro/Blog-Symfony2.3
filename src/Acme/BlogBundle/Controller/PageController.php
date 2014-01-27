@@ -18,4 +18,8 @@ class PageController extends Controller{
     public function aboutAction() {
         return $this->render('AcmeBlogBundle:Page:about.html.twig');
     }
+    
+    public function contactAction() {
+        return $this->render('AcmeBlogBundle:Page:contact.html.twig');
+    }
 }
