@@ -14,4 +14,4 @@ acme_blog_contact:
     pattern: /contact
     defaults: { _controller: AcmeBlogBundle:Page:contact }
     requirements:
-        _method: GET
+        _method: GET|POST
