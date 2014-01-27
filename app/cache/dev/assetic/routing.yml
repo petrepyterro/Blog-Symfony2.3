@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: /home/ubuntu/www/Symfony2/BlogBundle/app/config/routing_dev.yml
