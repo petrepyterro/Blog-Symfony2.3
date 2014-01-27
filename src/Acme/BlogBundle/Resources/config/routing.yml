@@ -3,3 +3,9 @@ acme_blog_homepage:
     defaults: { _controller: AcmeBlogBundle:Page:index }
     requirements:
         _method: GET
+        
+acme_blog_about:
+    pattern: /about
+    defaults: { _controller: AcmeBlogBundle:Page:about }
+    requirements:
+        _method: GET
