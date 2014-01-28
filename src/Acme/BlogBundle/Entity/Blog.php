@@ -48,7 +48,15 @@ class Blog{
      */
     protected $tags;
     
-    protected $comments;
+    protected $comments = array();
+    
+    public function addComments(Comment $comment) {
+        $this->comments[] = $comment;
+    }
+    
+    public function getComments() {
+        return $this->comments;
+    }
     
     /**
      * @ORM\Column(type="datetime")
