@@ -5,7 +5,7 @@ parameters:
     database_port: null
     database_name: symfony
     database_user: root
-    database_password: null
+    database_password: mysql
     mailer_transport: gmail
     mailer_encryption: ssl
     mailer_auth_mode: login
