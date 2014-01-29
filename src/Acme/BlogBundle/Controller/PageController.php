@@ -14,9 +14,6 @@ use Acme\BlogBundle\Entity\Enquiry;
 use Acme\BlogBundle\Form\EnquiryType;
 
 class PageController extends Controller{
-    public function indexAction(){
-        return $this->render('AcmeBlogBundle:Page:index.html.twig');
-    }
     
     public function aboutAction() {
         return $this->render('AcmeBlogBundle:Page:about.html.twig');
