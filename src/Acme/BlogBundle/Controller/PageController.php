@@ -54,4 +54,19 @@ class PageController extends Controller{
             'form' => $form->createView()
         ));
     }
+    
+    public function indexAction() {
+        $em = $this->getDoctrine()->getManager();
+        
+        $blogs = $em->createQueryBuilder()
+                ->select('b')
+                ->from('AcmeBlogBundle:Blog', 'b')
+                ->addOrderBy('b.created', 'DESC')
+                ->getQuery()
+                ->getResult();
+        
+        return $this->render('AcmeBlogBundle:Page:index.html.twig', array(
+            'blogs' => $blogs
+        ));
+    }
 }
