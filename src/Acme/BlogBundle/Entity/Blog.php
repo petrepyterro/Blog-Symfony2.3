@@ -10,7 +10,7 @@ namespace Acme\BlogBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Acme\BlogBundle\Entity\Repository\BlogRepository")
  * @ORM\Table(name="blog")
  * @ORM\HasLifecycleCallbacks
  */
