@@ -10,6 +10,10 @@ namespace Acme\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Length;
+
 /**
  * @ORM\Entity(repositoryClass="Acme\BlogBundle\Entity\Repository\CommentRepository")
  * @ORM\Table(name="comment")
@@ -217,5 +221,18 @@ class Comment{
     public function getBlog()
     {
         return $this->blog;
+    }
+    
+    public static function loadValidatorMetadata(ClassMetadata $metadata){
+        $metadata->addPropertyConstraint('comment', new NotBlank(array(
+            'message' => 'You must enter a comment'
+        )));
+        $metadata->addPropertyConstraint('user', new NotBlank(array(
+            'message' => 'You must enter your name'
+        )));
+        
+        $metadata->addPropertyConstraint('comment', new Length(array(
+            'min' => 2
+        )));
     }
 }
