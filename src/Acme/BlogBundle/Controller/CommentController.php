@@ -40,6 +40,11 @@ class CommentController extends Controller{
         $form->handleRequest($request);
         
         if ($form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($comment);
+            $em->flush();
+            
+            
             return $this->redirect($this->generateUrl('acme_blog_blog_show', array(
                 'id' => $comment->getBlog()->getId())).
                 '#comment-' . $comment->getId()   
