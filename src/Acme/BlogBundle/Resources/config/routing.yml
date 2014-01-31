@@ -22,3 +22,10 @@ acme_blog_blog_show:
     requirements:
         _method: GET
         id: \d+
+        
+acme_blog_comment_create:
+    pattern: /comment/{blog_id}
+    defaults: {_controller: AcmeBlogBundle:Comment:create }
+    requirements:
+        _method: POST
+        blog_id: \d+
