@@ -61,4 +61,16 @@ class PageController extends Controller{
             'blogs' => $blogs
         ));
     }
+    
+    public function sidebarAction() {
+        $em = $this->getDoctrine()->getManager();
+        
+        $tags = $em->getRepository('AcmeBlogBundle:Blog')->getTags();
+        
+        $tagWeights = $em->getRepository('AcmeBlogBundle:Blog')->getTagWeights($tags);
+        
+        return $this->render('AcmeBlogBundle:Page:sidebar.html.twig', array(
+            'tags' => $tagWeights
+        ));
+    }
 }
