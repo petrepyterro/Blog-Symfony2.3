@@ -49,7 +49,9 @@ class Blog{
      * @ORM\Column(type="text")
      */
     protected $tags;
-    
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="blog") 
+     */
     protected $comments = array();
     
     public function addComments(Comment $comment) {
