@@ -52,7 +52,7 @@ class Blog{
     /**
      * @ORM\OneToMany(targetEntity="Comment", mappedBy="blog") 
      */
-    protected $comments = array();
+    protected $comments;
     
     public function addComments(Comment $comment) {
         $this->comments[] = $comment;
