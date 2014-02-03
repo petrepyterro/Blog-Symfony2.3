@@ -17,7 +17,7 @@ acme_blog_contact:
         _method: GET|POST
         
 acme_blog_blog_show:
-    pattern: /{id}
+    pattern: /{id}/{slug}
     defaults: { _controller: AcmeBlogBundle:Blog:show }
     requirements:
         _method: GET
