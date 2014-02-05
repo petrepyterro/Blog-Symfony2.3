@@ -3,8 +3,14 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('bundles/acmeblog/css/blog.css') }}" type="text/css" rel="stylesheet" />
-    <link href="{{ asset('bundles/acmeblog/css/sidebar.css') }}" type="text/css" rel="stylesheet" />
+
+    {% stylesheets
+        '@AcmeBlogBundle/Resources/public/css/blog.css'
+        '@AcmeBlogBundle/Resources/public/css/sidebar.css'
+    %}
+
+        <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
 {% endblock %}
 
 {% block sidebar %}
